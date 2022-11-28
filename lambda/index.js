@@ -13,7 +13,8 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'クイズ、イルカとくじらひっくり返ったらどっちが軽い？';
+        const speakOutput = quizText[getRandomInt(2),0];
+        //const speakOutput = 'クイズ、イルカとくじらひっくり返ったらどっちが軽い？';
         var quizText = [["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","イルカ"]
         ["兄さんの前に書いてある数字はなーんだ？","いち"]];
         return handlerInput.responseBuilder
