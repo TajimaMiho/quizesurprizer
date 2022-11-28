@@ -15,8 +15,9 @@ const LaunchRequestHandler = {
   return Math.floor(Math.random() * max);
 }
         const randomNumber = getRandomInt(2);
+         const quizText = ["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"]["イルカ","いち"];
         const speakOutput = quizText[randomNumber,0];
-        const quizText = ["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"]["イルカ","いち"];
+       
         //const speakOutput = 'クイズ、イルカとくじらひっくり返ったらどっちが軽い？';
         /*const quizText = [["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
         ["兄さんの前に書いてある数字はなーんだ？","いち"]];
