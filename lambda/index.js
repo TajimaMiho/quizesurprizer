@@ -19,6 +19,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
+        "<audio src='https://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1.s3.amazonaws.com/Media/dl246.y2mate.com.mp3' />";
         const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
