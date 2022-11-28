@@ -11,10 +11,8 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-        const randomNumber = getRandomInt(2);
+        
+        var randomNumber = Math.random()*ReturnStrArr.length;
          const quizText = ["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"]["イルカ","いち"];
         const speakOutput = quizText[randomNumber,0];
        
