@@ -11,7 +11,8 @@ const LaunchRequestHandler = {
     },
     handle(handlerInput) {
         const speakOutput = 'クイズ、イルカとくじらひっくり返ったらどっちが軽い？';
-        var quizText = ["クイズ、イルカとくじらひっくり返ったらどっちが軽い？",5,6,7,8]["イルカ"];
+        var quizText = [["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","イルカ"]
+        ["兄さんの前に書いてある数字はなーんだ？","いち"]];
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
