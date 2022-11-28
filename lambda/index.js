@@ -57,7 +57,7 @@ const QuizMorningIntentHandler = {
         
     }
 };
-/*「もう一度問題を言って」と言われた時のコード(明日作る)
+//「もう一度問題を言って」と言われた時のコード(明日作る)
 const QuizHelpIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -87,7 +87,7 @@ const QuizHelpIntentHandler = {
     }
 };
 }
-*/
+
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -200,6 +200,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         QuizMorningIntentHandler,
+        QuizHelpIntent,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
