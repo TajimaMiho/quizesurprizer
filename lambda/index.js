@@ -86,7 +86,7 @@ const QuizHelpIntentHandler = {
         
     }
 };
-}
+
 
 
 const HelpIntentHandler = {
