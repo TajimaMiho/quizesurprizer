@@ -200,7 +200,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         QuizMorningIntentHandler,
-        QuizHelpIntent,
+        QuizHelpIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
