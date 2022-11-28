@@ -33,8 +33,13 @@ const QuizMorningIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
     },
     handle(handlerInput) {
+        var answer = handlerInput.requestEnvelope.request.intent.slots.answer.value;
 
-        const speakOutput = "答えは?";
+        var speakOutput;
+        
+        if (answer === ReturnStrArr[num][1]) {
+            speakOutput = "正解です！";
+        }
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
