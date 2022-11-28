@@ -19,7 +19,7 @@ const LaunchRequestHandler = {
         const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            //.reprompt(speakOutput)
             .getResponse();
     }
 };
