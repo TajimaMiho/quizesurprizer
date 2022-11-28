@@ -64,28 +64,21 @@ const QuizHelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuizHelpIntent';
     },
     handle(handlerInput) {
-        var answer = handlerInput.requestEnvelope.request.intent.slots.answer.value;
+        var quizHelp = handlerInput.requestEnvelope.request.intent.slots.quizHelp.value;
 
         var speakOutput;
         
-        if (answer === ReturnStrArr[num][1]) {
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解です！今日も良い一日を！";
+        
             return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
-        }
-        else{
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！答えるまで終わらないよ？";
-            return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt('答えは？')
-            .getResponse();
+        
+            
         }
 
         
-    }
-};
+    };
 
 
 
