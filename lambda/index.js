@@ -43,7 +43,7 @@ const QuizMorningIntentHandler = {
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解です！今日も良い一日を！";
         }
         else{
-            speakOutput = "残念！答えるまで終わらないよ？";
+            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！答えるまで終わらないよ？";
         }
 return handlerInput.responseBuilder
             .speak(speakOutput)
