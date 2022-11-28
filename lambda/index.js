@@ -37,7 +37,7 @@ function formatJSON(json){
         html += "<p>" + zodiac.qid + "/" + zodiac.competition + "/"  + zodiac.timestamp + "/"  + "</p>";
     }
   
-}
+
  
         const speakOutput = '答えは?';
 
@@ -45,6 +45,7 @@ function formatJSON(json){
             .speak(speakOutput)
             .reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
+    }
     }
 };
 
