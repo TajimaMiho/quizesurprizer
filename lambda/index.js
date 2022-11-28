@@ -40,6 +40,9 @@ const QuizMorningIntentHandler = {
         if (answer === ReturnStrArr[num][1]) {
             speakOutput = "正解です！";
         }
+        else{
+            speakOutput = "残念！";
+        }
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
