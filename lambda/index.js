@@ -11,7 +11,7 @@ const ReturnStrArr=　[
 var num;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
-    return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題です。"+ ReturnStrArr[num][0];
+    return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
 //s3://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1/Media/マイムービー.mp3
 //'https://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1.s3.amazonaws.com/Media/%E3%83%9E%E3%82%A4%E3%83%A0%E3%83%BC%E3%83%93%E3%83%BC.mp3'
@@ -41,14 +41,19 @@ const QuizMorningIntentHandler = {
         
         if (answer === ReturnStrArr[num][1]) {
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解です！今日も良い一日を！";
-        }
-        else{
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！答えるまで終わらないよ？";
-        }
-return handlerInput.responseBuilder
+            return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
+        }
+        else{
+            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！答えるまで終わらないよ？";
+            return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt('答えは？')
+            .getResponse();
+        }
+
         
     }
 };
