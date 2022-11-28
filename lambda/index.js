@@ -40,16 +40,16 @@ const QuizMorningIntentHandler = {
         var speakOutput;
         
         if (answer === ReturnStrArr[num][1]) {
-            speakOutput = "正解です！";
+            speakOutput = "正解です！今日も良い一日を！";
         }
         else{
             speakOutput = "残念！";
         }
-
-        return handlerInput.responseBuilder
+return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
+        
     }
 };
 
