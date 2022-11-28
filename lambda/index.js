@@ -43,7 +43,7 @@ const QuizMorningIntentHandler = {
             speakOutput = "正解です！今日も良い一日を！";
         }
         else{
-            speakOutput = "残念！";
+            speakOutput = "残念！答えるまで終わらないよ？";
         }
 return handlerInput.responseBuilder
             .speak(speakOutput)
