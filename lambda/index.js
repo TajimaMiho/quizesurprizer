@@ -11,7 +11,7 @@ const makeStateSpeach = function(){
   ["兄さんの前に書いてある数字はなーんだ？", "いち"],
 ];
     var num = Math.floor(Math.random()*ReturnStrArr.length);
-    return "問題です。" + ReturnStrArr[num];
+    return "問題です。" + ReturnStrArr[num][0];
 }
 
 const LaunchRequestHandler = {
