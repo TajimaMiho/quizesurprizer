@@ -67,7 +67,7 @@ const QuizHelpIntentHandler = {
         var quizHelp = handlerInput.requestEnvelope.request.intent.slots.quizHelp.value;
 
         var speakOutput;
-        
+        speakOutput=makeStateSpeach();
         
             return handlerInput.responseBuilder
             .speak(speakOutput)
