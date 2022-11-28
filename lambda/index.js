@@ -26,7 +26,7 @@ const QuizMorningIntentHandler = {
     },
     handle(handlerInput) {
 
-        const speakOutput = '答えは?';
+        const speakOutput = quiz.json.qid;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
