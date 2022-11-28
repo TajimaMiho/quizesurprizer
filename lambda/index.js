@@ -5,6 +5,9 @@
  * */
 const Alexa = require('ask-sdk-core');
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
