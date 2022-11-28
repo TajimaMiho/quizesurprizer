@@ -12,7 +12,7 @@ const LaunchRequestHandler = {
     },
     handle(handlerInput) {
         
-        var randomNumber = Math.random()*quizText.length;
+       
          const quizText = ["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"]["イルカ","いち"];
          var randomNumber = Math.random()*quizText.length;
         const speakOutput = quizText[randomNumber,0];
