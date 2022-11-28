@@ -8,9 +8,9 @@ const ReturnStrArr=　[
   ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
   ["兄さんの前に書いてある数字はなーんだ？", "いち"],
 ];
-
+var num;
 const makeStateSpeach = function(){
-    var num = Math.floor(Math.random()*ReturnStrArr.length);
+    num = Math.floor(Math.random()*ReturnStrArr.length);
     return "問題です。" + ReturnStrArr[num][0];
 }
 
