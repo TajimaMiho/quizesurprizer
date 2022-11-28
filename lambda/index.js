@@ -6,7 +6,10 @@
 const Alexa = require('ask-sdk-core');
 
 const makeStateSpeach = function(){
-    const ReturnStrArr=["イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"];
+    const ReturnStrArr=　[
+  ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
+  ["兄さんの前に書いてある数字はなーんだ？", "いち"],
+];
     var num = Math.floor(Math.random()*ReturnStrArr.length);
     return "問題です。" + ReturnStrArr[num];
 }
