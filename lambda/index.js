@@ -5,22 +5,18 @@
  * */
 const Alexa = require('ask-sdk-core');
 
+const makeStateSpeach = function(){
+    const ReturnStrArr=["イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"];
+    var num = Math.floor(Math.random()*ReturnStrArr.length);
+    return "問題です。" + ReturnStrArr[num];
+}
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        
-       
-         const quizText = ["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","兄さんの前に書いてある数字はなーんだ？"]["イルカ","いち"];
-         var randomNumber = Math.random()*quizText.length;
-        const speakOutput = quizText[randomNumber][0];
-       
-        //const speakOutput = 'クイズ、イルカとくじらひっくり返ったらどっちが軽い？';
-        /*const quizText = [["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
-        ["兄さんの前に書いてある数字はなーんだ？","いち"]];
-        */
+        const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
