@@ -17,7 +17,7 @@ const LaunchRequestHandler = {
         const randomNumber = getRandomInt(2);
         const speakOutput = quizText[randomNumber,0];
         //const speakOutput = 'クイズ、イルカとくじらひっくり返ったらどっちが軽い？';
-        const quizText = [["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","イルカ"]
+        const quizText = [["クイズ、イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
         ["兄さんの前に書いてある数字はなーんだ？","いち"]];
         
         return handlerInput.responseBuilder
