@@ -4,12 +4,12 @@
  * session persistence, api calls, and more.
  * */
 const Alexa = require('ask-sdk-core');
-
-const makeStateSpeach = function(){
-    const ReturnStrArr=　[
+const ReturnStrArr=　[
   ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
   ["兄さんの前に書いてある数字はなーんだ？", "いち"],
 ];
+
+const makeStateSpeach = function(){
     var num = Math.floor(Math.random()*ReturnStrArr.length);
     return "問題です。" + ReturnStrArr[num][0];
 }
