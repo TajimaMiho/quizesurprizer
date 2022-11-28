@@ -25,6 +25,20 @@ const QuizMorningIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuizMorningIntent';
     },
     handle(handlerInput) {
+        const url = "aio_02_dev_v1.0.json";    // 読み込むJSONファイル
+ 
+// 12星座情報を整形して表示する
+function formatJSON(json){
+    console.log(json);
+ 
+    // JSONファイルを整形して表示
+    let html = "";
+    for(let zodiac of json){
+        html += "<p>" + zodiac.qid + "/" + zodiac.competition + "/"  + zodiac.timestamp + "/"  + "</p>";
+    }
+  
+}
+ 
         const speakOutput = '答えは?';
 
         return handlerInput.responseBuilder
