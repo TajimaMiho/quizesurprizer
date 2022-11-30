@@ -5,8 +5,8 @@
  * */
 const Alexa = require('ask-sdk-core');
 const ReturnStrArr=　[
-  ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
-  ["兄さんの前に書いてある数字はなーんだ？", "いち"],
+  ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ", "いるか", "海豚"],
+  ["兄さんの前に書いてある数字はなーんだ？", "いち", "一", "イチ"],
 ];
 let speechOut;
 var num;
@@ -42,7 +42,7 @@ const QuizMorningIntentHandler = {
 
         var speakOutput;
         
-        if (answer === ReturnStrArr[num][1]) {
+        if (answer === ReturnStrArr[num][1] || answer === ReturnStrArr[num][2] || answer === ReturnStrArr[num][3] ) {
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解です！今日も良い一日を！";
             return handlerInput.responseBuilder
             .speak(speakOutput)
