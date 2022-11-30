@@ -12,7 +12,7 @@ let speechOut;
 var num;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
-   return '<audio src="s3://musicquiz34/Question.mp3"/>' +"問題。"+ ReturnStrArr[num][0];
+   return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
 //s3://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1/Media/マイムービー.mp3
 //'https://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1.s3.amazonaws.com/Media/%E3%83%9E%E3%82%A4%E3%83%A0%E3%83%BC%E3%83%93%E3%83%BC.mp3'
