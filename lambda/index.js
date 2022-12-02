@@ -5,17 +5,14 @@
  * */
 const Alexa = require('ask-sdk-core');
 const ReturnStrArr=　[
-  ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ", "いるか", "海豚"],
-  ["兄さんの前に書いてある数字はなーんだ？", "いち", "一", "イチ"],
+  ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
+  ["兄さんの前に書いてある数字はなーんだ？", "いち"],
 ];
-let speechOut;
 var num;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
-   return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。" + ReturnStrArr[num][0] ;
+    return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
-//https://musicquiz34.s3.ap-northeast-1.amazonaws.com/Question.mp3
-//soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01
 //s3://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1/Media/マイムービー.mp3
 //'https://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1.s3.amazonaws.com/Media/%E3%83%9E%E3%82%A4%E3%83%A0%E3%83%BC%E3%83%93%E3%83%BC.mp3'
 const LaunchRequestHandler = {
@@ -42,8 +39,8 @@ const QuizMorningIntentHandler = {
 
         var speakOutput;
         
-        if (answer === ReturnStrArr[num][1] || answer === ReturnStrArr[num][2] || answer === ReturnStrArr[num][3] ) {
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解です！今日も良い一日を！";
+        if (answer === ReturnStrArr[num][1]) {
+            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解！今日も良い一日を！";
             return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
