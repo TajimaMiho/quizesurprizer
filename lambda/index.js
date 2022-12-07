@@ -7,6 +7,7 @@ const Alexa = require('ask-sdk-core');
 const ReturnStrArr=　[
   ["イルカとくじらひっくり返ったらどっちが軽い？","イルカ"],
   ["兄さんの前に書いてある数字はなーんだ？", "いち"],
+  ["なかなか掴めなくてイライラするお肉ってなんだ", "鶏肉", "トリ肉"]
 ];
 var num;
 const makeStateSpeach = function(){
