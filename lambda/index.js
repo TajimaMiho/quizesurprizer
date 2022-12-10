@@ -49,7 +49,7 @@ const QuizMorningIntentHandler = {
             attr.lastCount = count;
         handlerInput.attributesManager.setPersistentAttributes(attr);
             await handlerInput.attributesManager.savePersistentAttributes();
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解"+'${count}問連続正解中';
+            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解"+Serifu[count];
             return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
