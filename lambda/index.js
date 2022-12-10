@@ -39,7 +39,7 @@ const QuizMorningIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
     },
     async handle(handlerInput) {
-        var answer;
+        var answer = handlerInput.requestEnvelope.request.intent.slots.answer.value;
         var speakOutput;
 
         if (answer === ReturnStrArr[num][1]||answer === ReturnStrArr[num][2]||answer === ReturnStrArr[num][3]) {
