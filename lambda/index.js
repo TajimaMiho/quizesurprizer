@@ -190,6 +190,7 @@ const ErrorHandler = {
  * payloads to the handlers above. Make sure any new handlers or interceptors you've
  * defined are included below. The order matters - they're processed top to bottom 
  * */
+const persistenceAdapter = require('ask-sdk-s3-persistence-adapter');
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
@@ -202,5 +203,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
-    .withCustomUserAgent('sample/hello-world/v1.2')
+    .withPersistenceAdapter(
+        new persistenceAdapter.S3PersistenceAdapter(
+            {bucketName:process.env.S3_PERSISTENCE_BUCKET}))
     .lambda();
