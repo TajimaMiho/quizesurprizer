@@ -40,6 +40,7 @@ const QuizMorningIntentHandler = {
 
         var speakOutput;
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
+        attr.lastAnswer = answer;
         if (answer === ReturnStrArr[num][1]||answer === ReturnStrArr[num][2]||answer === ReturnStrArr[num][3]) {
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解！今日も良い一日を！";
             return handlerInput.responseBuilder
