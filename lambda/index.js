@@ -11,8 +11,8 @@ const ReturnStrArr=　[
   ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", '<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"8回以上14回未満",'<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"10回から12回",
   '十', '十一', '十二'],
   ['箱の中身はなんでしょう？お題はフルーツです！'+ '<audio src="soundbank://soundlibrary/doors/doors_handles/handle_05"/>'+ '片手で二つはもてそう。形は、きゅうだけど、楕円だね。ん〜と、表面がザラザラしてるー。', '色は茶色です。', '中は緑です', 'キウイ', 'きうい', '姫憂'],
-  ['ドアが3つある。見た目は一緒。木製をとおるべし。よく耳をすませ。' + 'まずは左から。' + '<audio src="soundbank://soundlibrary/doors/doors_prison/prison_02"/>' + '次に真ん中' + '<audio src="soundbank://soundlibrary/doors/doors_wood/wood_04"/> '
-  + '最後に右' + '<audio src="soundbank://soundlibrary/doors/doors_metal/metal_04"/>' + '正しいドアはどれ？', 'よく聞いてみて', 'みしって聞こえる？', '右' + 'みぎ' + '三'],
+  ['ドアが3つある。見た目は一緒。木製をとおるべし。よく耳をすませ。' + 'まずは左から。' + '<audio src="soundbank://soundlibrary/doors/doors_prison/prison_02"/>' + '次に真ん中' + ''<audio src="soundbank://soundlibrary/doors/doors_metal/metal_04"/>''
+  + '最後に右' + '<audio src="soundbank://soundlibrary/doors/doors_wood/wood_04"/>'  + '正しいドアはどれ？', 'よく聞いてみて', 'みしって聞こえる？', '右' + 'みぎ' + '三'],
 ];
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
