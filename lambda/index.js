@@ -10,6 +10,7 @@ const ReturnStrArr=　[
   ["なかなか掴めなくてイライラするお肉ってなんだ", "鶏肉", "トリ肉", "とりにく"]
 ];
 var num;
+var count = 0;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
@@ -20,8 +21,10 @@ const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
-    handle(handlerInput) {
-        
+    async handle(handlerInput) {
+        const attr = await handlerInput.attributesManager.getPersistentAttributes();
+        const lastCount = attr.lastCount;
+        if (lastCount !== undefined) count = lastCount;
         const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -36,13 +39,13 @@ const QuizMorningIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
     },
     async handle(handlerInput) {
-        var count = handlerInput.requestEnvelope.request.intent.slots.answer.value;
         var answer;
         var speakOutput;
 
         if (answer === ReturnStrArr[num][1]||answer === ReturnStrArr[num][2]||answer === ReturnStrArr[num][3]) {
             const attr = await handlerInput.attributesManager.getPersistentAttributes();
-            attr.lastAnswer = answer;
+            count ++;
+            attr.lastCount = count;
         handlerInput.attributesManager.setPersistentAttributes(attr);
             await handlerInput.attributesManager.savePersistentAttributes();
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解"+'${count}問連続正解中';
