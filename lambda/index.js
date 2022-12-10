@@ -36,16 +36,16 @@ const QuizMorningIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
     },
     async handle(handlerInput) {
-        var answer = handlerInput.requestEnvelope.request.intent.slots.answer.value;
-
+        var count = handlerInput.requestEnvelope.request.intent.slots.answer.value;
+        var answer;
         var speakOutput;
-        const attr = await handlerInput.attributesManager.getPersistentAttributes();
-        attr.lastAnswer = answer;
-        handlerInput.attributesManager.setPersistentAttributes(attr);
-        await handlerInput.attributesManager.savePersistentAttributes();
 
         if (answer === ReturnStrArr[num][1]||answer === ReturnStrArr[num][2]||answer === ReturnStrArr[num][3]) {
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解！今日も良い一日を！";
+            const attr = await handlerInput.attributesManager.getPersistentAttributes();
+            attr.lastAnswer = answer;
+        handlerInput.attributesManager.setPersistentAttributes(attr);
+            await handlerInput.attributesManager.savePersistentAttributes();
+            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解"+'${count}問連続正解中';
             return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
