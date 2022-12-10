@@ -25,7 +25,8 @@ const LaunchRequestHandler = {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
         if (lastCount !== undefined) count = lastCount;
-        const speakOutput = makeStateSpeach() + "ただいま ${lastCount}問連続正解中";
+        //const speakOutput = makeStateSpeach() + "ただいま ${lastCount}問連続正解中";
+        const speakOutput = "ただいま ${lastCount}問連続正解中";
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
