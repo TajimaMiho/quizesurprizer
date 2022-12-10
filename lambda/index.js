@@ -10,6 +10,7 @@ const ReturnStrArr=　[
   ["なかなか掴めなくてイライラするお肉ってなんだ", "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ", "鶏肉", "トリ肉", "とりにく"],
   ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", '<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"8回以上14回未満",'<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"10回から12回",
   '11回', '十一', '十一回'],
+  ['箱の中身はなんでしょう？お題はフルーツです！'+ '<audio src="soundbank://soundlibrary/doors/doors_handles/handle_05"/>'+ '片手で二つはもてそう。形は楕円の球かな。ん〜と、ザラザラしてる〜。', '色は茶色です。', '中は緑です', 'キウイ', 'きうい', '姫憂'],
   
 ];
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
@@ -33,7 +34,7 @@ const LaunchRequestHandler = {
         const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(ReturnStrArr[num][hint])
+            .reprompt()
             .getResponse();
     }
 };
@@ -61,10 +62,9 @@ const QuizMorningIntentHandler = {
         }
         else{
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！" + answer + "ではありません。答えるまで終わらないよ？";
-            hint++;
             return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(ReturnStrArr[num][hint])
+            .reprompt('ヒントがほしい時は、ヒント頂戴、と言ってください。')
             .getResponse();
         }
 
