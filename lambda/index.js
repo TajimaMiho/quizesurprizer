@@ -9,7 +9,7 @@ const ReturnStrArr=　[
   ["兄さんの前に書いてある数字はなーんだ？", "にいさんかぁ", "にい。さん。の前ねぇ", "いち", "一", "イチ"],
   ["なかなか掴めなくてイライラするお肉ってなんだ", "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ", "鶏肉", "トリ肉", "とりにく"],
   ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", '<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"8回以上14回未満",'<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"10回から12回",
-  '11回', '11', '十一回']
+  '11回', '十一', '十一回'],
 ];
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
