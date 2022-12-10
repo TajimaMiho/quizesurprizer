@@ -52,10 +52,10 @@ const QuizMorningIntentHandler = {
             .getResponse();
         }
         else{
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！答えるまで終わらないよ？";
+            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！" + answer + "ではありません。答えるまで終わらないよ？";
             return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt('答えは？')
+            .reprompt('あきらめますか?')
             .getResponse();
         }
 
