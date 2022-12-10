@@ -43,7 +43,7 @@ const QuizMorningIntentHandler = {
         var answer = handlerInput.requestEnvelope.request.intent.slots.answer.value;
         var speakOutput;
 
-        if (answer === ReturnStrArr[num][1]||answer === ReturnStrArr[num][2]||answer === ReturnStrArr[num][3]) {
+        if (answer === ReturnStrArr[num][3]||answer === ReturnStrArr[num][4]||answer === ReturnStrArr[num][5]) {
             const attr = await handlerInput.attributesManager.getPersistentAttributes();
             count ++;
             attr.lastCount = count;
