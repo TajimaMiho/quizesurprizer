@@ -9,6 +9,7 @@ const ReturnStrArr=　[
   ["兄さんの前に書いてある数字はなーんだ？", "いち", "一", "イチ"],
   ["なかなか掴めなくてイライラするお肉ってなんだ", "鶏肉", "トリ肉", "とりにく"]
 ];
+const Serifu = ["いち", "に", "さん"];
 var num;
 var count = 0;
 const makeStateSpeach = function(){
