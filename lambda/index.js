@@ -12,6 +12,7 @@ const ReturnStrArr=　[
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
 var count = 0;
+var hint = 0;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
@@ -57,9 +58,10 @@ const QuizMorningIntentHandler = {
         }
         else{
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！" + answer + "ではありません。答えるまで終わらないよ？";
+            hint++;
             return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt('あきらめますか?')
+            .reprompt(ReturnStrArr[num][hint])
             .getResponse();
         }
 
