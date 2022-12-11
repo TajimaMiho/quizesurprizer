@@ -18,7 +18,7 @@ const ReturnStrArr=　[
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
 var count = 0;
-var hint = 1;
+var hint = 0;
 const makeStateSpeach = function(){
     num = 5;
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
@@ -81,6 +81,7 @@ const HintIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HintIntent';
     },
     handle(handlerInput) {
+        hint++;
         var speakOutput;
         speakOutput=makeStateSpeach([num][hint]);
         
