@@ -57,7 +57,6 @@ const QuizMorningIntentHandler = {
         handlerInput.attributesManager.setPersistentAttributes(attr);
             await handlerInput.attributesManager.savePersistentAttributes();
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解。"+"そうそう。今日もあなたの活躍のおかげでで進捗があったみたいですよ。聞きたければ合言葉を言ってください。";
-            speakOutput+= Serifu[count-1];
             return handlerInput.responseBuilder
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
@@ -76,6 +75,22 @@ const QuizMorningIntentHandler = {
 };
 
 //「ヒント頂戴って言われた時
+const HintIntentHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'HintIntent';
+    },
+    handle(handlerInput) {
+        if(hint<2) hint++;
+        const speechText = ReturnStrArr[num][hint] + 'それではもう一度。' + ReturnStrArr[num][0];
+
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            .reprompt()
+            .getResponse();
+    }
+};
+
 const HintIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
