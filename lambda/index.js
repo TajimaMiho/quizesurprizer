@@ -15,7 +15,8 @@ const ReturnStrArr=　[
   ['ドアが3つある。見た目は一緒。木製をとおるべし。よく耳をすませ。' + 'まずは左から。' + '<audio src="soundbank://soundlibrary/doors/doors_prison/prison_02"/>' + '次に真ん中' + '<audio src="soundbank://soundlibrary/doors/doors_metal/metal_04"/>'
   + '最後に右' + '<audio src="soundbank://soundlibrary/doors/doors_wood/wood_04"/>'  + '正しいドアはどれ？', 'よく聞いてみて', 'みしって聞こえる？', '右' , 'みぎ' , '三'],
   ['次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。', 'ゾウの鳴き声だね。', '蔵が入ってる言葉は？', '冷蔵庫', 'れいぞうこ', 'レイゾウコ'],
-  ['よーく聞いてくださいね。今から３回私が火の魔法を打ちます。どれが一番遠くに飛んでいったか、当ててみてください！まず１回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_05"/>','爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','三回目','最後','三番目'],
+  ['よーく聞いてくださいね。今から３回私が火の魔法を打ちます。どれが一番遠くに飛んでいったか、当ててみてください！まず１回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_05"/>'+'次の２回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_09"/>'
+  ,'爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','三回目','最後','三番目'],
 ];
 const Serifu = ["おはようございます。今日もいい日ですね。ところで、あなたが今日早起きしてくれたことで危機が一つ去りました。ネムール伯爵の使者が一人去ったのです。え？そんなシステムだったのかって？そうですよ、あなたが早起きすればするほどネムール伯爵が弱っていくのです...おっと、失礼しました。私はあなたの味方ですのでご安心ください」またもやわけのわからないことを言い出すアレクサ。どうやらこいつは俺に話しかけているらしいのだが、なんなんだ一体。",
 "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
