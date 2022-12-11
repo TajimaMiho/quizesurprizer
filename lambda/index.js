@@ -17,7 +17,7 @@ const ReturnStrArr=　[
   ['次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。', 'ゾウの鳴き声だね。', '蔵が入ってる言葉は？', '冷蔵庫', 'れいぞうこ', 'レイゾウコ'],
   ['よーく聞いてくださいね。今から２回、私が火の魔法を打ちます。どれが一番遠くに飛んでいったか、当ててみてください！まず１回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_05"/>'+'次に２回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_01"/>'+'どっちの方が遠くに飛んでいったでしょう？'
   ,'爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','二回目','最後','二番目'],
-  ["車椅子って10回言って。 。　。　。　。　。　。　。　。　。　。　。", "ひっくり返るんだよ？", "文字を逆さにしてみたら？","イルカ", "いるか", "海豚"],
+  ["車椅子って10回言って。 。　。　。　。　。　。　。　。　。　。　。", "ひっくり返るんだよ？", "文字を逆さにしてみたら？","クリスマス", "くりすます", "クリスます"],
 ];
 const Serifu = ["おはようございます。今日もいい日ですね。ところで、あなたが今日早起きしてくれたことで危機が一つ去りました。ネムール伯爵の使者が一人去ったのです。え？そんなシステムだったのかって？そうですよ、あなたが早起きすればするほど、ネムール伯爵が弱っていくのです。。。おっと、失礼しました。私はあなたの味方ですのでご安心ください」。またもやわけのわからないことを言い出すアレクサ。どうやらこいつは俺に話しかけているらしいのだが、なんなんだ一体。",
 "ネムール伯爵を倒すと決意してから早二日ですね...今日もしっかり起きてくださりありがとうございます。本日も使者が一人去って行きました...今日は彼の護衛の騎士が去っていきました。この使者は私の事を快く思っていないらしく、毎日嫌がらせをしてくるのです。しかし、そんな事でへこたれる私ではありません！ 昨夜も寝る前に魔法を使いながら精神統一し、今日こそは必ず勝つという強い意志で眠りにつきましたからね！", 
@@ -40,7 +40,7 @@ const LaunchRequestHandler = {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
         var speakOutput;
-        //if (lastCount !== undefined) count = lastCount;
+        if (lastCount !== undefined) count = lastCount;
         if(count === 0) {
             speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵、彼は、人が、早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。' + makeStateSpeach();
             count++;
