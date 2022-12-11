@@ -8,7 +8,7 @@ const Alexa = require('ask-sdk-core');
 const ReturnStrArr=　[
   ["イルカとくじらひっくり返ったらどっちが軽い？", "ひっくり返るんだよ？", "文字を逆さにしてみたら？","イルカ", "いるか", "海豚"],
   ["兄さんの前に書いてある数字はなーんだ？", "にいさんかぁ", "にい。さん。の前ねぇ。", "いち", "一", "イチ"],
-  ["なかなか掴めなくてイライラするお肉ってなんだ", "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ。", "鶏肉", "トリ肉", "とりにく"],
+  ["なかなか掴めなくてイライラするお肉ってなんだ。次の鳴き声の中から選んで。答え方は、牛肉、のように、なんちゃら肉、という形で答えよ。" + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_chicken_cluck_01"/>' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_sheep_bleat_01"/>' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_horse_whinny_02"/>', "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ。", "鶏肉", "トリ肉", "とりにく"],
   ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", "8回以上14回未満","10回から12回",
   '十', '十一', '十二'],
   ['箱の中身はなんでしょう？お題はフルーツです！'+ '<audio src="soundbank://soundlibrary/doors/doors_handles/handle_05"/>'+ '片手で二つはもてそう。形は、きゅうだけど、楕円だね。ん〜と、表面がザラザラしてるー。', '色は茶色です。', '中は緑です。', 'キウイ', 'きうい', '姫憂'],
