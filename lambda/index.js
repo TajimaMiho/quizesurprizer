@@ -81,8 +81,8 @@ const HintIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'HintIntent';
     },
     handle(handlerInput) {
-        hint++;
-        const speechText = ReturnStrArr[num][hint] + ReturnStrArr[num][0];
+        if(hint<2) hint++;
+        const speechText = ReturnStrArr[num][hint] + 'それではもう一度。' + ReturnStrArr[num][0];
 
         return handlerInput.responseBuilder
             .speak(speechText)
