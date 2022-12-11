@@ -25,7 +25,7 @@ var count = 0;
 var hint = 0;
 const makeStateSpeach = function(){
     //num = Math.floor(Math.random()*ReturnStrArr.length);
-    num=7;
+    num=6;
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
 //s3://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1/Media/マイムービー.mp3
