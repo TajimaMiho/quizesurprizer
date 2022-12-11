@@ -41,7 +41,7 @@ const LaunchRequestHandler = {
         var speakOutput;
         //if (lastCount !== undefined) count = lastCount;
         if(count === 0) {
-            speakOutput = 'この世界にいつか到来すると言われているネムール伯爵、彼は人が早起きせずに怠惰にしている時にひどく活性化すると言われているです。彼の野望を止めるために勇者様には毎日早起きして欲しいのです。なにそれ？俺が勇者かよ！それに毎朝早く起きるのは嫌だ。でもなんか面白そうだからちょっとやってみようかな。そんな事を考えながら俺は眠りについた。そして翌朝、目覚ましの音、そしてアレクサが用意したクイズで起きることになるのだった。' + makeStateSpeach();
+            speakOutput = 'この世界にいつか到来すると言われているネムール伯爵、彼は、人が、早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。' + makeStateSpeach();
             count++;
         }
         else speakOutput = makeStateSpeach();
