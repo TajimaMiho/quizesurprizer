@@ -73,6 +73,7 @@ const QuizMorningIntentHandler = {
         
     }
 };
+
 //「もう一度問題を言って」と言われた時のコード(明日作る)
 const QuizHelpIntentHandler = {
     canHandle(handlerInput) {
