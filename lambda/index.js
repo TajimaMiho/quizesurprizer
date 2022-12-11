@@ -18,7 +18,7 @@ const ReturnStrArr=　[
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
 var count = 0;
-var hint = 1;
+var hint = 0;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
@@ -81,8 +81,9 @@ const HintIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'HintIntent';
     },
     handle(handlerInput) {
+        hint++;
         // 応答メッセージの作成。変数を展開するため両端はバッククォートにする。
-        const speechText = ReturnStrArr[num][1];
+        const speechText = ReturnStrArr[num][hint];
 
         return handlerInput.responseBuilder
             .speak(speechText)
