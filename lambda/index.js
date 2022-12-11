@@ -74,21 +74,19 @@ const QuizMorningIntentHandler = {
     }
 };
 
-//「もう一度問題を言って」と言われた時のコード(明日作る)
-const QuizHelpIntentHandler = {
+//「ヒント頂戴って言われた時
+const HintIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuizHelpIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HintIntent';
     },
     handle(handlerInput) {
-        var quizHelp = handlerInput.requestEnvelope.request.intent.slots.quizHelp.value;
-
         var speakOutput;
-        speakOutput=makeStateSpeach();
+        speakOutput=makeStateSpeach([num][hint]);
         
             return handlerInput.responseBuilder
             .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .reprompt()
             .getResponse();
         
             
@@ -211,7 +209,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         QuizMorningIntentHandler,
-        QuizHelpIntentHandler,
+        HintIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
