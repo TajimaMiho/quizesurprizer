@@ -91,10 +91,10 @@ const HintIntentHandler = {
     }
 };
 
-const HintIntentHandler = {
+const StoryIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-            && handlerInput.requestEnvelope.request.intent.name === 'HintIntent';
+            && handlerInput.requestEnvelope.request.intent.name === 'StoryIntent';
     },
     handle(handlerInput) {
         if(hint<2) hint++;
@@ -223,6 +223,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         QuizMorningIntentHandler,
         HintIntentHandler,
         HelpIntentHandler,
+        StoryIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,
