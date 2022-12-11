@@ -77,24 +77,19 @@ const QuizMorningIntentHandler = {
 //「ヒント頂戴って言われた時
 const HintIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HintIntent';
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'HintIntent';
     },
     handle(handlerInput) {
-        hint++;
-        var speakOutput;
-        speakOutput=makeStateSpeach([num][1]);
-        
-            return handlerInput.responseBuilder
-            .speak(speakOutput)
+        // 応答メッセージの作成。変数を展開するため両端はバッククォートにする。
+        const speechText = `ヒントです`;
+
+        return handlerInput.responseBuilder
+            .speak(speechText)
             .reprompt()
             .getResponse();
-        
-            
-        }
-
-        
-    };
+    }
+};
 
 
 
