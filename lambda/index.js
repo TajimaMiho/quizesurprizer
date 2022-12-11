@@ -33,7 +33,7 @@ const LaunchRequestHandler = {
     async handle(handlerInput) {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
-        if (lastCount !== undefined) count = lastCount;
+        //if (lastCount !== undefined) count = lastCount;
         const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
