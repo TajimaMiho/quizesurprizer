@@ -19,15 +19,13 @@ const ReturnStrArr=　[
   ,'爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','二回目','最後','二番目'],
 ];
 const Serifu = ["おはようございます。今日もいい日ですね。ところで、あなたが今日早起きしてくれたことで危機が一つ去りました。ネムール伯爵の使者が一人去ったのです。え？そんなシステムだったのかって？そうですよ、あなたが早起きすればするほど、ネムール伯爵が弱っていくのです。。。おっと、失礼しました。私はあなたの味方ですのでご安心ください」。またもやわけのわからないことを言い出すアレクサ。どうやらこいつは俺に話しかけているらしいのだが、なんなんだ一体。",
-"ネムール伯爵を倒すと決意してから早二日ですね。今日もしっかり起きてくださりありがとうございます。本日も使者が一人去って行きました...今日は彼の護衛の騎士が去っていきました。この使者は私の事を快く思っていないらしく、毎日嫌がらせをしてくるのです。しかし、そんな事でへこたれる私ではありません！ 昨夜も寝る前に魔法を使いながら精神統一し、今日こそは必ず勝つという強い意志で眠りにつきましたからね！", 
-"おはようございます！勇者様！今日は勇者様に朗報があるんですよ...なんと！私アレクサ、魔法を使えるようになったのです！！え？どんな魔法なのかって？火です、火。音だけじゃ微妙ですか？でもでも安心してください！もうすでに練習もしましたから！(火の音)明日からのクイズにはこんなのも使っちゃいますよー！",
-"し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
+"ネムール伯爵を倒すと決意してから早二日ですね...今日もしっかり起きてくださりありがとうございます。本日も使者が一人去って行きました...今日は彼の護衛の騎士が去っていきました。この使者は私の事を快く思っていないらしく、毎日嫌がらせをしてくるのです。しかし、そんな事でへこたれる私ではありません！ 昨夜も寝る前に魔法を使いながら精神統一し、今日こそは必ず勝つという強い意志で眠りにつきましたからね！", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
 var count = 0;
 var hint = 0;
 const makeStateSpeach = function(){
-    num = Math.floor(Math.random()*ReturnStrArr.length);
-    //num=7;
+    //num = Math.floor(Math.random()*ReturnStrArr.length);
+    num=7;
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
 //s3://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1/Media/マイムービー.mp3
@@ -39,13 +37,8 @@ const LaunchRequestHandler = {
     async handle(handlerInput) {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
-        if (lastCount !== undefined) count = lastCount;
-        var speakOutput;
-        if(count === 0) {
-            speakOutput = 'この世界にいつか到来すると言われているネムール伯爵、彼は人が早起きせずに怠惰にしている時にひどく活性化すると言われているです。彼の野望を止めるために勇者様には毎日早起きして欲しいのです。なにそれ？俺が勇者かよ！それに毎朝早く起きるのは嫌だ。でもなんか面白そうだからちょっとやってみようかな。そんな事を考えながら俺は眠りについた。そして翌朝、目覚ましの音、そしてアレクサが用意したクイズで起きることになるのだった。' + makeStateSpeach();
-            count++;
-        }
-        else speakOutput = makeStateSpeach();
+        //if (lastCount !== undefined) count = lastCount;
+        const speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt()
@@ -108,7 +101,7 @@ const StoryIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'StoryIntent';
     },
     handle(handlerInput) {
-        const speechText = Serifu[count-1];
+        const speechText = Serifu[count-2];
 
         return handlerInput.responseBuilder
             .speak(speechText + '今日の進捗はこれで終わりです。今日もよい一日を')
