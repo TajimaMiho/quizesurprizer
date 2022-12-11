@@ -101,7 +101,6 @@ const StoryIntentHandler = {
 
         return handlerInput.responseBuilder
             .speak(speechText + '今日の進捗はこれで終わりです。今日もよい一日を')
-            .reprompt()
             .getResponse();
     }
 };
