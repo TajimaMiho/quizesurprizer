@@ -48,8 +48,7 @@ const LaunchRequestHandler = {
 
 const QuizMorningIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
+        return Alexa.getIntentName(handlerInput.requestEnvelope) === 'AnswerIntent';
     },
     async handle(handlerInput) {
         var answer = handlerInput.requestEnvelope.request.intent.slots.answer.value;
