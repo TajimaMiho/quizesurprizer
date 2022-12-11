@@ -82,7 +82,7 @@ const HintIntentHandler = {
     },
     handle(handlerInput) {
         // 応答メッセージの作成。変数を展開するため両端はバッククォートにする。
-        const speechText = `ヒントです`;
+        const speechText = ReturnStrArr[num][1];
 
         return handlerInput.responseBuilder
             .speak(speechText)
