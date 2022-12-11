@@ -97,11 +97,10 @@ const StoryIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'StoryIntent';
     },
     handle(handlerInput) {
-        if(hint<2) hint++;
-        const speechText = ReturnStrArr[num][hint] + 'それではもう一度。' + ReturnStrArr[num][0];
+        const speechText = Serifu[count-1];
 
         return handlerInput.responseBuilder
-            .speak(speechText)
+            .speak(speechText + '今日の進捗はこれで終わりです。今日もよい一日を')
             .reprompt()
             .getResponse();
     }
