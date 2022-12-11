@@ -79,7 +79,7 @@ const QuizMorningIntentHandler = {
 };
 
 //「ヒント頂戴って言われた時
-/*const HintIntentHandler = {
+const HintIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
             && handlerInput.requestEnvelope.request.intent.name === 'HintIntent';
@@ -93,7 +93,7 @@ const QuizMorningIntentHandler = {
             .reprompt()
             .getResponse();
     }
-};*/
+};
 
 const StoryIntentHandler = {
     canHandle(handlerInput) {
@@ -223,7 +223,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         QuizMorningIntentHandler,
-        //HintIntentHandler,
+        HintIntentHandler,
         HelpIntentHandler,
         StoryIntentHandler,
         CancelAndStopIntentHandler,
