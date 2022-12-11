@@ -83,7 +83,7 @@ const HintIntentHandler = {
     handle(handlerInput) {
         hint++;
         var speakOutput;
-        speakOutput=makeStateSpeach([num][hint]);
+        speakOutput=makeStateSpeach([num][1]);
         
             return handlerInput.responseBuilder
             .speak(speakOutput)
