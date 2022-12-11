@@ -18,7 +18,7 @@ const ReturnStrArr=　[
 const Serifu = ["いち", "に", "さん", "し", "ご", "ろく", "なな", "はち", "きゅう", "じゅう"];
 var num;
 var count = 0;
-var hint = 0;
+var hint = 1;
 const makeStateSpeach = function(){
     num = Math.floor(Math.random()*ReturnStrArr.length);
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
