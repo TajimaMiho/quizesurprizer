@@ -63,7 +63,7 @@ const QuizMorningIntentHandler = {
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>'+"正解。"+"そうそう。あなたの活躍のおかげで今日も進捗があったみたいですよ。聞きたければ合言葉を言ってください。";
             return handlerInput.responseBuilder
             .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .reprompt()
             .getResponse();
         }
         else{
