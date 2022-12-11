@@ -37,8 +37,12 @@ const LaunchRequestHandler = {
     async handle(handlerInput) {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
+        var speakOutput;
         //if (lastCount !== undefined) count = lastCount;
-        const speakOutput = makeStateSpeach();
+        if(count === 0) {
+            speakOutput = makeStateSpeach();
+            count++;
+        }
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt()
