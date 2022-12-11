@@ -8,7 +8,7 @@ const ReturnStrArr=　[
   ["イルカとくじらひっくり返ったらどっちが軽い？", "ひっくり返るんだよ？", "文字を逆さにしてみたら？","イルカ", "いるか", "海豚"],
   ["兄さんの前に書いてある数字はなーんだ？", "にいさんかぁ", "にい。さん。の前ねぇ", "いち", "一", "イチ"],
   ["なかなか掴めなくてイライラするお肉ってなんだ", "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ", "鶏肉", "トリ肉", "とりにく"],
-  ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", '<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"8回以上14回未満",'<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"10回から12回",
+  ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", "8回以上14回未満","10回から12回",
   '十', '十一', '十二'],
   ['箱の中身はなんでしょう？お題はフルーツです！'+ '<audio src="soundbank://soundlibrary/doors/doors_handles/handle_05"/>'+ '片手で二つはもてそう。形は、きゅうだけど、楕円だね。ん〜と、表面がザラザラしてるー。', '色は茶色です。', '中は緑です', 'キウイ', 'きうい', '姫憂'],
   ['ドアが3つある。見た目は一緒。木製をとおるべし。よく耳をすませ。' + 'まずは左から。' + '<audio src="soundbank://soundlibrary/doors/doors_prison/prison_02"/>' + '次に真ん中' + '<audio src="soundbank://soundlibrary/doors/doors_metal/metal_04"/>'
@@ -82,8 +82,7 @@ const HintIntentHandler = {
     },
     handle(handlerInput) {
         hint++;
-        // 応答メッセージの作成。変数を展開するため両端はバッククォートにする。
-        const speechText = ReturnStrArr[num][hint];
+        const speechText = ReturnStrArr[num][hint] + ReturnStrArr[num][0];
 
         return handlerInput.responseBuilder
             .speak(speechText)
