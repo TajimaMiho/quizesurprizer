@@ -43,7 +43,7 @@ const LaunchRequestHandler = {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
         var speakOutput;
-        //if (lastCount !== undefined) count = lastCount;
+        if (lastCount !== undefined) count = lastCount;
         if(count === 0)  speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。彼は、人間が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。そういえば、大事なことを言い忘れていました。この世界での合言葉は、ひらけごま、です。絶対に忘れないでくださいね。' + makeStateSpeach();
         else speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
