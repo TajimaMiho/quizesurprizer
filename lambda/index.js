@@ -28,7 +28,8 @@ var num;
 var count = 0;
 var hint = 0;
 const makeStateSpeach = function(){
-    num = Math.floor(Math.random()*ReturnStrArr.length);
+    if(count < 3) num = count;
+    else num = Math.floor(Math.random()*ReturnStrArr.length);
     //num=7;
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
@@ -43,14 +44,14 @@ const LaunchRequestHandler = {
         const lastCount = attr.lastCount;
         var speakOutput;
         if (lastCount !== undefined) count = lastCount;
-        if(count === 0) {
+        /*if(count === 0) {
             speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。彼は、人間が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。そういえば、大事なことを言い忘れていました。この世界での合言葉は、ひらけごま、です。絶対に忘れないでくださいね。' + '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。" + '次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。';
             //speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。'
         }
         else if(count < 3) {
                 num = count;
-                speakOutput = '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];}
-        else speakOutput = makeStateSpeach();
+                speakOutput = '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];}*/
+        speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt()
