@@ -69,13 +69,17 @@ const QuizMorningIntentHandler = {
             await handlerInput.attributesManager.savePersistentAttributes();
             if(count<4){
                 speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>' + "正解。" + "そう、そう。あなたの活躍のおかげで今日も進捗があったみたいですよ？聞きたければ合言葉を言ってください。";
+                return handlerInput.responseBuilder
+                .speak(speakOutput)
+                .reprompt()
+                .getResponse();
             }
             else{
-                speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>' + "正解。";}
-            return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt()
-            .getResponse();
+                speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>' + "正解。";
+                return handlerInput.responseBuilder
+                .speak(speakOutput)
+                .reprompt()
+                .getResponse();}
         }
         else{
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！" + answer + "ではありません。答えるまで終わらないよ？" + ReturnStrArr[num][0];
