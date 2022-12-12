@@ -45,7 +45,7 @@ const LaunchRequestHandler = {
         //if (lastCount !== undefined) count = lastCount;
         if(count === 0) {
             speakOutput = '<audio src="soundbank://soundlibrary/scifi/amzn_sfx_scifi_laser_gun_fires_06"/>' + 'この世界にいつか到来すると言われている、ネムール伯爵、彼は、人が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。' + makeStateSpeach();
-            count++;
+            count = 1;
         }
         else speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
