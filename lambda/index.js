@@ -115,7 +115,7 @@ const StoryIntentHandler = {
         const speechText = Serifu[count-2];
 
         return handlerInput.responseBuilder
-            .speak(speechText + '今日の進捗はこれで終わりです。今日もよい一日を')
+            .speak('今日の進捗はこれで終わりです。今日もよい一日を')
             .getResponse();
     }
 };
