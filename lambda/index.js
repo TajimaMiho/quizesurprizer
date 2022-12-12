@@ -8,7 +8,8 @@ const Alexa = require('ask-sdk-core');
 const ReturnStrArr=　[
   //["イルカとくじらひっくり返ったらどっちが軽い？", "ひっくり返るんだよ？", "文字を逆さにしてみたら？","イルカ", "いるか", "海豚"],
   ['次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。', 'ゾウの鳴き声だね。', '蔵が入ってる言葉は？', '冷蔵庫', 'れいぞうこ', 'レイゾウコ'],
-  ["兄さんの前に書いてある数字はなーんだ？", "にいさんかぁ", "にい。さん。の前ねぇ。", "いち", "一", "イチ"],
+  //["兄さんの前に書いてある数字はなーんだ？", "にいさんかぁ", "にい。さん。の前ねぇ。", "いち", "一", "イチ"],
+  ["昨日は晴れだったので、公園に行ってお散歩しました。公園では鳥がたくさんいて、たくさん写真を取りました。爽やかな鳥の鳴き声が心地よかったです。" + "さて、私は先ほど、鳥、という言葉を何回言ったでしょう。", "注意して聞いてみてね", "たくさん写真を、とり、ました。","三回", "三", "3回"],
   ['よーく聞いてくださいね。今から２回、私が火の魔法を打ちます。どれが一番遠くに飛んでいったか、当ててみてください！まず１回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_05"/>'+'次に２回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_01"/>'+'どっちの方が遠くに飛んでいったでしょう？'
   ,'爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','二回目','最後','二番目'],
   ["なかなか掴めなくて、イライラするお肉ってなんだ。次の鳴き声の中から選んで。答え方は、牛肉、のように、なんちゃら肉、という形で答えよ。" + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_chicken_cluck_01"/>' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_sheep_bleat_01"/>' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_horse_whinny_02"/>', "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ。", "鶏肉", "トリ肉", "とりにく"],
@@ -18,7 +19,6 @@ const ReturnStrArr=　[
   ['ドアが3つある。見た目は一緒。木製をとおるべし。よく耳をすませ。' + 'まずは左から。' + '<audio src="soundbank://soundlibrary/doors/doors_prison/prison_02"/>' + '次に真ん中' + '<audio src="soundbank://soundlibrary/doors/doors_metal/metal_04"/>'
   + '最後に右' + '<audio src="soundbank://soundlibrary/doors/doors_wood/wood_04"/>'  + '正しいドアはどれ？', 'よく聞いてみて', 'みしって聞こえる？', '右' , 'みぎ' , '三'],
   ["シャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリア。ガラスの靴を拾ったのは？", "拾った人ですよ？", "ガラスの靴を拾ったのはシンデレラではありませんよね？","王子様", "王子", "おうじさま"],
-  ["昨日は晴れだったので、公園に行ってお散歩しました。公園では鳥がたくさんいて、たくさん写真を取りました。爽やかな鳥の鳴き声が心地よかったです。" + "さて、私は先ほど、鳥、という言葉を何回言ったでしょう。", "注意して聞いてみてね", "たくさん写真を、とり、ました。","三回", "三", "3回"],
 ];
 const Serifu = ["おはようございます。今日もいい日ですね。ところで、あなたが今日早起きしてくれたことで危機が一つ去りました。ネムール伯爵の使者が一人去ったのです。え？そんなシステムだったのかって？そうですよ、あなたが早起きすればするほど、ネムール伯爵が弱っていくのです。。。おっと、失礼しました。私はあなたの味方ですのでご安心ください。",
 "ネムール伯爵を倒すと決意してから早二日ですね...今日もしっかり起きてくださりありがとうございます。本日も使者が一人去って行きました...今日は彼の護衛の騎士が去っていきました。この使者は私の事を快く思っていないらしく、毎日嫌がらせをしてくるのです。しかし、そんな事でへこたれる私ではありません！ 昨夜も寝る前に魔法を使いながら精神統一し、今日こそは必ず勝つという強い意志で眠りにつきましたからね！", 
@@ -42,7 +42,7 @@ const LaunchRequestHandler = {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
         var speakOutput;
-        if (lastCount !== undefined) count = lastCount;
+        //if (lastCount !== undefined) count = lastCount;
         if(count === 0) {
             speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。彼は、人間が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。そういえば、大事なことを言い忘れていました。この世界での合言葉は、ひらけごま、です。絶対に忘れないでくださいね。' + '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。" + '次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。';
             //speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。'
