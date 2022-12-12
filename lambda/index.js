@@ -78,7 +78,6 @@ const QuizMorningIntentHandler = {
                 speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>' + "正解。";
                 return handlerInput.responseBuilder
                 .speak(speakOutput)
-                .reprompt()
                 .getResponse();}
         }
         else{
