@@ -74,7 +74,7 @@ const QuizMorningIntentHandler = {
             await handlerInput.attributesManager.savePersistentAttributes();
             speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>';
             if(count<5)
-            speakOutput+= "正解。"+"そうそう。あなたの活躍のおかげで今日も進捗があったみたいですよ。聞きたければ合言葉を言ってください。";
+            speakOutput+= "正解。"+"そう、そう。あなたの活躍のおかげで今日も進捗があったみたいですよ？聞きたければ合言葉を言ってください。";
             return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt()
