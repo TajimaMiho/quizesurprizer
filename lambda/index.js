@@ -8,6 +8,8 @@ const Alexa = require('ask-sdk-core');
 const ReturnStrArr=　[
   ["イルカとくじらひっくり返ったらどっちが軽い？", "ひっくり返るんだよ？", "文字を逆さにしてみたら？","イルカ", "いるか", "海豚"],
   ["兄さんの前に書いてある数字はなーんだ？", "にいさんかぁ", "にい。さん。の前ねぇ。", "いち", "一", "イチ"],
+  ['よーく聞いてくださいね。今から２回、私が火の魔法を打ちます。どれが一番遠くに飛んでいったか、当ててみてください！まず１回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_05"/>'+'次に２回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_01"/>'+'どっちの方が遠くに飛んでいったでしょう？'
+  ,'爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','二回目','最後','二番目'],
   ["なかなか掴めなくて、イライラするお肉ってなんだ。次の鳴き声の中から選んで。答え方は、牛肉、のように、なんちゃら肉、という形で答えよ。" + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_chicken_cluck_01"/>' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_sheep_bleat_01"/>' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_horse_whinny_02"/>', "掴めない。掴めない。他の言い方をするとー。","掴めない。掴めない。とりにくいねぇ。", "鶏肉", "トリ肉", "とりにく"],
   ['<audio src="soundbank://soundlibrary/vehicles/trains/train_05"/>'+"この電車、何回鈴なった？", "8回以上14回未満","10回から12回",
   '十', '十一', '十二'],
@@ -15,8 +17,6 @@ const ReturnStrArr=　[
   ['ドアが3つある。見た目は一緒。木製をとおるべし。よく耳をすませ。' + 'まずは左から。' + '<audio src="soundbank://soundlibrary/doors/doors_prison/prison_02"/>' + '次に真ん中' + '<audio src="soundbank://soundlibrary/doors/doors_metal/metal_04"/>'
   + '最後に右' + '<audio src="soundbank://soundlibrary/doors/doors_wood/wood_04"/>'  + '正しいドアはどれ？', 'よく聞いてみて', 'みしって聞こえる？', '右' , 'みぎ' , '三'],
   ['次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。', 'ゾウの鳴き声だね。', '蔵が入ってる言葉は？', '冷蔵庫', 'れいぞうこ', 'レイゾウコ'],
-  ['よーく聞いてくださいね。今から２回、私が火の魔法を打ちます。どれが一番遠くに飛んでいったか、当ててみてください！まず１回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_05"/>'+'次に２回目！'+'<audio src="soundbank://soundlibrary/explosions/fireballs/fireballs_10"/>'+'<audio src="soundbank://soundlibrary/guns/cannons/cannons_01"/>'+'どっちの方が遠くに飛んでいったでしょう？'
-  ,'爆発する瞬間の音を聞いてみて','一番遠くで爆発してるのは？','二回目','最後','二番目'],
   ["シャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリアシャンデリア。ガラスの靴を拾ったのは？", "拾った人ですよ？", "ガラスの靴を拾ったのはシンデレラではありませんよね？","王子様", "王子", "おうじさま"],
   ["昨日は晴れだったので、公園に行ってお散歩しました。公園では鳥がたくさんいて、たくさん写真を取りました。爽やかな鳥の鳴き声が心地よかったです。" + "さて、私は先ほど、鳥、という言葉を何回言ったでしょう。", "注意して聞いてみてね", "たくさん写真を、とり、ました。","三回", "三", "3回"],
 ];
