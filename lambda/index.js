@@ -81,7 +81,7 @@ const QuizMorningIntentHandler = {
             .getResponse();
         }
         else{
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！" + answer + "ではありません。答えるまで終わらないよ？" + ReturnStrArr[num][0];
+            speakOutput += '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_negative_01"/>'+"残念！" + answer + "ではありません。答えるまで終わらないよ？" + ReturnStrArr[num][0];
             return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt('ヒントがほしい時は、ヒント頂戴、と言ってください。')
