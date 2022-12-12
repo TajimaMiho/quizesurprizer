@@ -231,8 +231,8 @@ const persistenceAdapter = require('ask-sdk-s3-persistence-adapter');
 exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
-        QuizMorningIntentHandler,
         HintIntentHandler,
+        QuizMorningIntentHandler,
         HelpIntentHandler,
         StoryIntentHandler,
         CancelAndStopIntentHandler,
