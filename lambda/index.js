@@ -29,7 +29,7 @@ var count = 0;
 var hint = 0;
 const makeStateSpeach = function(){
     //num = Math.floor(Math.random()*ReturnStrArr.length);
-    num=9;
+    num=7;
     return '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];
 }
 //s3://28d838a1-22d7-47ec-acc6-f239904f397a-us-east-1/Media/マイムービー.mp3
@@ -42,7 +42,7 @@ const LaunchRequestHandler = {
         const attr = await handlerInput.attributesManager.getPersistentAttributes();
         const lastCount = attr.lastCount;
         var speakOutput;
-        if (lastCount !== undefined) count = lastCount;
+        //if (lastCount !== undefined) count = lastCount;
         if(count === 0) {
             speakOutput = '<audio src="soundbank://soundlibrary/scifi/amzn_sfx_scifi_laser_gun_fires_06"/>' + 'この世界にいつか到来すると言われている、ネムール伯爵、彼は、人が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。' + makeStateSpeach();
             count++;
