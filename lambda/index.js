@@ -46,10 +46,9 @@ const LaunchRequestHandler = {
         if(count === 0) {
             speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。彼は、人間が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。そういえば、大事なことを言い忘れていました。この世界での合言葉は、ひらけごま、です。絶対に忘れないでくださいね。' + '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。" + '次の鳴き声どこから聞こえた？' + '<audio src="soundbank://soundlibrary/animals/amzn_sfx_elephant_03"/>' + 'いち、冷蔵庫。に、こたつ。さん、畳の下。';
             //speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。'
-            count = 1;
         }
-        else if(count < 4) {
-                num = count -1;
+        else if(count < 3) {
+                num = count;
                 speakOutput = '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];}
         else speakOutput = makeStateSpeach();
         return handlerInput.responseBuilder
@@ -73,9 +72,11 @@ const QuizMorningIntentHandler = {
             attr.lastCount = count;
         handlerInput.attributesManager.setPersistentAttributes(attr);
             await handlerInput.attributesManager.savePersistentAttributes();
-            speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>';
-            if(count<5)
-            speakOutput+= "正解。"+"そう、そう。あなたの活躍のおかげで今日も進捗があったみたいですよ？聞きたければ合言葉を言ってください。";
+            if(count<4){
+                speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>' + "正解。" + "そう、そう。あなたの活躍のおかげで今日も進捗があったみたいですよ？聞きたければ合言葉を言ってください。";
+            }
+            else{
+                speakOutput = '<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01"/>' + "正解。";}
             return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt()
