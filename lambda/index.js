@@ -47,7 +47,7 @@ const LaunchRequestHandler = {
             speakOutput = 'この世界にいつか到来すると言われている、ネムール伯爵。彼は、人間が早起きせずに怠惰にしている時に、ひどく活性化すると言われているのです。彼の野望を止めるために、勇者様には、毎日早起きして欲しいのです。そういえば、大事なことを言い忘れていました。この世界での合言葉は、ひらけごま、です。絶対に忘れないでくださいね。' + makeStateSpeach();
             count = 1;
         }
-        else if(count < 4) {
+        if(count < 4) {
                 num = count -1;
                 speakOutput = '<audio src="soundbank://soundlibrary/musical/amzn_sfx_church_bell_1x_01"/>' +"問題。"+ ReturnStrArr[num][0];}
         else speakOutput = makeStateSpeach();
