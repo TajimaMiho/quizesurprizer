@@ -1,0 +1,80 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "ja-JP": {
+          "summary": "朝起きるのが辛い...どうしても二度寝してしまう...。そんなあなたに、目覚ましのクイズをプレゼント！解けば解くほど、進む君の冒険が待っている！",
+          "examplePhrases": [
+            "アレクサ、クイズサプライザーを開いて",
+            "アレクサ、クイズサプライザー"
+          ],
+          "keywords": [
+            "quiz",
+            "クイズ"
+          ],
+          "name": "クイズサプライザー",
+          "description": "クイズサプライザーはアレクサのアラーム後の定型アクションに設定することによってアラーム後の二度寝を防止します。\nアレクサならではの音を用いた奇想天外なクイズと、冒険心溢れたストーリーによって、きっとあなたの毎朝が輝くはずです！",
+          "smallIconUri": "file://assets/images/ja-JP_smallIconUri.png",
+          "updatesDescription": "LINEボットに繋げたいのですが、エラーと格闘中です。",
+          "largeIconUri": "file://assets/images/ja-JP_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "sourceLocaleForLanguages": [
+          {
+            "sourceLocale": "ja-JP",
+            "language": "ja"
+          }
+        ],
+        "isActive": true
+      },
+      "isAvailableWorldwide": false,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "QUIZZES",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": [
+        "JP"
+      ]
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:550674762048:function:28d838a1-22d7-47ec-acc6-f239904f397a:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:550674762048:function:28d838a1-22d7-47ec-acc6-f239904f397a:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:550674762048:function:28d838a1-22d7-47ec-acc6-f239904f397a:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:550674762048:function:28d838a1-22d7-47ec-acc6-f239904f397a:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "ja-JP": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "shoppingKit": {
+        "isShoppingActionsEnabled": false,
+        "isAmazonAssociatesOnAlexaEnabled": false
+      },
+      "usesPersonalInfo": false
+    }
+  }
+}

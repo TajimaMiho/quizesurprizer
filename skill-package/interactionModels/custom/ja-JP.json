@@ -1,0 +1,298 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "クイズサプライザー",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AnswerIntent",
+          "slots": [
+            {
+              "name": "answer",
+              "type": "answer"
+            }
+          ],
+          "samples": [
+            "{answer}"
+          ]
+        },
+        {
+          "name": "HintIntent",
+          "slots": [
+            {
+              "name": "hint",
+              "type": "hint"
+            }
+          ],
+          "samples": [
+            "{hint} くれ",
+            "{hint} をください",
+            "{hint} ください",
+            "{hint} がほしい",
+            "{hint} をちょうだい",
+            "ヒント",
+            "ヒントちょうだい"
+          ]
+        },
+        {
+          "name": "StoryIntent",
+          "slots": [],
+          "samples": [
+            "ひらけーごま",
+            "ひらけごま",
+            "開けーごま",
+            "開けごま"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "{王子様}"
+              }
+            },
+            {
+              "name": {
+                "value": "{最後}"
+              }
+            },
+            {
+              "name": {
+                "value": "{2番目}"
+              }
+            },
+            {
+              "name": {
+                "value": "{三回目}"
+              }
+            },
+            {
+              "name": {
+                "value": "{二回目}"
+              }
+            },
+            {
+              "name": {
+                "value": "{一回目}"
+              }
+            },
+            {
+              "name": {
+                "value": "{畳の下}"
+              }
+            },
+            {
+              "name": {
+                "value": "{こたつ}"
+              }
+            },
+            {
+              "name": {
+                "value": "{二}"
+              }
+            },
+            {
+              "name": {
+                "value": "{真ん中}"
+              }
+            },
+            {
+              "name": {
+                "value": "{左}"
+              }
+            },
+            {
+              "name": {
+                "value": "{りんご}"
+              }
+            },
+            {
+              "name": {
+                "value": "{みかん}"
+              }
+            },
+            {
+              "name": {
+                "value": "{豚肉}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十五回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十四回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十三回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{五回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{四回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{九回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{八回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{冷蔵庫}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十二回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十一回}"
+              }
+            },
+            {
+              "name": {
+                "value": "{三}"
+              }
+            },
+            {
+              "name": {
+                "value": "{みぎ}"
+              }
+            },
+            {
+              "name": {
+                "value": "{右}"
+              }
+            },
+            {
+              "name": {
+                "value": "{次に真ん中}"
+              }
+            },
+            {
+              "name": {
+                "value": "{姫憂}"
+              }
+            },
+            {
+              "name": {
+                "value": "{きうい}"
+              }
+            },
+            {
+              "name": {
+                "value": "{キウイ}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十二}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十一}"
+              }
+            },
+            {
+              "name": {
+                "value": "{十}"
+              }
+            },
+            {
+              "name": {
+                "value": "{とりにく}"
+              }
+            },
+            {
+              "name": {
+                "value": "{トリ肉}"
+              }
+            },
+            {
+              "name": {
+                "value": "{鶏肉}"
+              }
+            },
+            {
+              "name": {
+                "value": "{一}"
+              }
+            },
+            {
+              "name": {
+                "value": "{イルカ}"
+              }
+            },
+            {
+              "name": {
+                "value": "{いち}"
+              }
+            },
+            {
+              "name": {
+                "value": "{いるか}"
+              }
+            }
+          ],
+          "name": "answer"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "ヒント"
+              }
+            }
+          ],
+          "name": "hint"
+        }
+      ]
+    }
+  },
+  "version": "13"
+}
